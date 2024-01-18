@@ -24,7 +24,7 @@ void (*check(char *comands, unsigned int ligne))(stack_t **stack, unsigned int l
 	}
 	if (comands)
 	{
-		dprintf(2, "L%u: unknown instruction %s\n", ligne, comands);
+		dprintf(2, "L%d: unknown instruction %s\n", ligne, comands);
 		exit(EXIT_FAILURE);
 	}
 	return(opcodes[i].f);

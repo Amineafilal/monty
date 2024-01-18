@@ -38,5 +38,4 @@ int main(int argc, char *argv[])
 	free_dlistint(stack);
 	fclose(fd);
 	return (0);
-	
 }

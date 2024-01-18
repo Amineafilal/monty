@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	while (getline(&buf, &size, fd)!= -1)
+	while (getline(&buf, &size, fd) != -1)
 	{
 		tokenize(buf, ligne, &stack);
 		ligne++;

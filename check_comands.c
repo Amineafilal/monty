@@ -11,11 +11,10 @@ void (*check(char *comands, unsigned int ligne))(stack_t **stack, unsigned int l
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
-		{"nop", nop},
 		{"pop", pop},
 		{"swap", swap},
 		{"add", add},
-
+		{"nop", nop},
 	};
 
 	while (i < 7)

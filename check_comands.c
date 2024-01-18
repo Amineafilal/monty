@@ -24,6 +24,8 @@ void (*check(char *com, unsigned int ln))(stack_t **stack, unsigned int ligne)
 		{"mod", mod},
 		{"pchar", pchar},
 		{"pstr", pstr},
+		{"rotr", rotr},
+		{"rotl", rotl},
 		{"nop", nop},
 		{"nop", nop},
 	};

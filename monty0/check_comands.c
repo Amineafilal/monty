@@ -14,7 +14,7 @@ void (*check(char *comands))(stack_t **stack, unsigned int ligne)
 		{"kamal", nop},
 	};
 
-	while (i < 4)
+	while (i < 3)
 	{
 		if (!strcmp(comands, opcodes[i].opcode))
 		{

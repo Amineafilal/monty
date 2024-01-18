@@ -77,5 +77,5 @@ void pstr(stack_t **stack, unsigned int ligne)
 		printf("%c", ascii);
 		ptr = ptr->next;
 	}
-	putchar('\n');
+	printf("\n");
 }

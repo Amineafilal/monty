@@ -1,6 +1,10 @@
 #include "monty.h"
 
-/***/
+/**
+ * mod - Computes the remainder of the division
+ * @stack: Double pointer to the beginning of the stack
+ * @ligne: Line number where the modulo operation is executed
+*/
 
 void mod(stack_t **stack, unsigned int ligne)
 {

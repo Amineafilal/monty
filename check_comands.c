@@ -23,11 +23,12 @@ void (*check(char *com, unsigned int ln))(stack_t **stack, unsigned int ligne)
 		{"mul", mul},
 		{"mod", mod},
 		{"pchar", pchar},
+		{"pstr", pstr},
 		{"nop", nop},
 		{"nop", nop},
 	};
 
-	while (i < 12)
+	while (i < 13)
 	{
 		if (!strcmp(com, opcodes[i].opcode))
 		{

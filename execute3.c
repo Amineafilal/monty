@@ -55,3 +55,27 @@ void pchar(stack_t **stack, unsigned int ligne)
 	ascii = value;
 	printf("%c\n", ascii);
 }
+
+/**
+ * pstr - prints the string starting at the top of the stack
+ * @stack: Double pointer to the beginning of the stack
+ * @ligne: Line number where the modulo operation is executed
+ */
+
+void pstr(stack_t **stack, unsigned int ligne)
+{
+	int value;
+	char ascii;
+	stack_t *ptr;
+
+	(void) ligne;
+	ptr = *stack;
+	while (ptr->n <= 126 && ptr != NULL && ptr->n != 0 && ptr->n >= 32)
+	{
+		value = ptr->n;
+		ascii = value;
+		printf("%c", ascii);
+		ptr = ptr->next;
+	}
+	putchar('\n');
+}

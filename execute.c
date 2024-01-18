@@ -35,7 +35,15 @@ void pall(stack_t **stack, unsigned int ligne)
 
 void pint(stack_t **stack, unsigned int ligne)
 {
+	int len;
+
 	(void) ligne;
+	len = dlistint_len(*stack);
+	if (len == 0)
+	{
+		dprintf(2, "L%d: can't pint, stack empty\n", ligne);
+		exit(EXIT_FAILURE);
+	}
 
 	printf("%d\n", (*stack)->n);
 }

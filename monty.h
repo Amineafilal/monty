@@ -8,7 +8,6 @@
 #include <string.h>
 #include <fcntl.h>
 #include <unistd.h>
-#define _GNU_SOURCE
 
 extern char *buf;
 /**
@@ -60,5 +59,5 @@ void swap(stack_t **stack, unsigned int ligne);
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
 void add(stack_t **stack, unsigned int ligne);
 void sub(stack_t **stack, unsigned int ligne);
-
+void _div(stack_t **stack, unsigned int ligne);
 #endif

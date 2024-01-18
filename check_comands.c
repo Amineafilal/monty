@@ -19,11 +19,12 @@ void (*check(char *com, unsigned int ln))(stack_t **stack, unsigned int ligne)
 		{"swap", swap},
 		{"sub", sub},
 		{"add", add},
+		{"_div", _div},
 		{"nop", nop},
 		{"nop", nop},
 	};
 
-	while (i < 8)
+	while (i < 9)
 	{
 		if (!strcmp(com, opcodes[i].opcode))
 		{

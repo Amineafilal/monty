@@ -13,6 +13,7 @@ void (*check(char *comands, unsigned int ligne))(stack_t **stack, unsigned int l
 		{"pint", pint},
 		{"pop", pop},
 		{"swap", swap},
+		{"sub", sub},
 		{"add", add},
 		{"nop", nop},
 		{"nop", nop},

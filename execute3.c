@@ -36,22 +36,21 @@ void mod(stack_t **stack, unsigned int ligne)
  */
 void pchar(stack_t **stack, unsigned int ligne)
 {
-	int value;
-	int len;
-	char ascii;
+	int stack_len, ch;
+	char character;
 
-	len = dlistint_len(*stack);
-	if (len == 0)
+	stack_len = dlistint_len(*stack);
+	if (stack_len == 0)
 	{
 		dprintf(2, "L%d: can't pchar, stack empty\n", ligne);
 		exit(EXIT_FAILURE);
 	}
-	value = (*stack)->n;
-	if (value < 32 || value > 126)
+	ch = (*stack)->n;
+	if (ch < 32 || ch > 126)
 	{
 		dprintf(2, "L%d: can't pchar, value out of range\n", ligne);
 		exit(EXIT_FAILURE);
 	}
-	ascii = value;
-	dprintf(1, "%c\n", ascii);
+	character = ch;
+	printf("%c\n", character);
 }

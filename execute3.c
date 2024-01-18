@@ -4,7 +4,7 @@
  * mod - Computes the remainder of the division
  * @stack: Double pointer to the beginning of the stack
  * @ligne: Line number where the modulo operation is executed
-*/
+ */
 
 void mod(stack_t **stack, unsigned int ligne)
 {
@@ -27,4 +27,30 @@ void mod(stack_t **stack, unsigned int ligne)
 	element2 = (*stack)->n;
 	delete_dnodeint_at_index(stack, 0);
 	add_dnodeint(stack, element2 % element1);
+}
+
+/**
+ * pchar - prints the char at the top of the stack.
+ * @stack: Double pointer to the beginning of the stack
+ * @ligne: Line number where the modulo operation is executed
+ */
+void pchar(stack_t **stack, unsigned int ligne)
+{
+	int value = (*stack)->n;
+	int len;
+	char ascii;
+
+	len = dlistint_len(*stack);
+	if (len == 0)
+	{
+		dprintf(2, "L%d: can't pchar, stack empty\n", ligne);
+		exit(EXIT_FAILURE);
+	}
+	if (value < 32 || value > 126)
+	{
+		dprintf(2, "L%d: can't pchar, value out of range\n", ligne);
+		exit(EXIT_FAILURE);
+	}
+	ascii = value;
+	dprintf(1, "%c\n", ascii);
 }

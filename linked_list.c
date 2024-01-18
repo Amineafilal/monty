@@ -88,17 +88,18 @@ void free_dlistint(dlistint_t *head)
 
 size_t dlistint_len(const dlistint_t *h)
 {
-	int count = 0;
+	int n;
+	dlistint_t *head;
 
-	if (h == NULL)
-		return (count);
+	n = 0;
+	head = (dlistint_t *)h;
 
-	while (h)
+	while (head != NULL)
 	{
-		count++;
-		h = h->next;
+		head = head->next;
+		n++;
 	}
-	return (count);
+	return (n);
 }
 
 

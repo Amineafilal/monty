@@ -53,5 +53,6 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n);
 size_t print_dlistint(const dlistint_t *h);
 void pall(stack_t **stack, unsigned int ligne);
 void free_dlistint(dlistint_t *head);
+void pop(stack_t **stack,unsigned int ligne);
 
 #endif /*_MONTY_*/

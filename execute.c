@@ -40,6 +40,20 @@ void pint(stack_t **stack, unsigned int ligne)
 	printf("%d\n", (*stack)->n);
 }
 
+void pop(stack_t **stack,unsigned int ligne)
+{
+	stack_t *ptr = *stack;
+
+	(void) ligne;
+	
+	if (ptr != NULL)
+	{
+		*stack = ptr->next;
+		ptr->prev = NULL;
+		ptr->next = NULL;
+		free(ptr);
+	}
+}
 
 void nop(stack_t **stack,unsigned int ligne)
 {

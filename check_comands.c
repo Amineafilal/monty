@@ -12,9 +12,10 @@ void (*check(char *comands, unsigned int ligne))(stack_t **stack, unsigned int l
 		{"pall", pall},
 		{"pint", pint},
 		{"nop", nop},
+		{"pop", pop},
 	};
 
-	while (i < 4)
+	while (i < 5)
 	{
 		if (!strcmp(comands, opcodes[i].opcode))
 		{

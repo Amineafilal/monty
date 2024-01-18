@@ -29,8 +29,8 @@ void push(stack_t **stack, unsigned int ligne)
 void pall(stack_t **stack, unsigned int ligne)
 {
 	(void) ligne;
-	if (*stack != NULL)
-		print_dlistint(*stack);
+
+	print_dlistint(*stack);
 }
 
 void pint(stack_t **stack, unsigned int ligne)

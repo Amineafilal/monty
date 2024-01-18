@@ -90,7 +90,7 @@ void _div(stack_t **stack, unsigned int ligne)
 		exit(EXIT_FAILURE);
 	}
 	element1 = (*stack)->n;
-	if (element1 == 0)
+	if (element2 == 0)
 	{
 		dprintf(2, "L%d: division by zero\n", ligne);
 		exit(EXIT_FAILURE);

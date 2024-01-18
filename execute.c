@@ -19,11 +19,6 @@ void push(stack_t **stack, unsigned int ligne)
 			add_dnodeint(stack, number);
 		}
 	}
-	else
-	{
-		dprintf(2, "L%d: usage: push integer\n", ligne);
-		exit(EXIT_FAILURE);
-	}
 }
 
 void pall(stack_t **stack, unsigned int ligne)

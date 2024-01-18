@@ -47,16 +47,14 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 size_t print_dlistint(const dlistint_t *h)
 {
 	int count = 0;
+	dlistint_t *head;
 
-	if (h == NULL)
-		return (count);
-	while (h->prev)
-		h = h->prev;
-
-	while (h)
+	head = (dlistint_t *)h;
+	
+	while (head)
 	{
-		printf("%d\n", h->n);
-		h = h->next;
+		printf("%d\n", head->n);
+		head = head->next;
 		count++;
 	}
 	return (count);

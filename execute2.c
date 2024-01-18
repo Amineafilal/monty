@@ -117,8 +117,8 @@ void mul(stack_t **stack, unsigned int ligne)
 		exit(EXIT_FAILURE);
 	}
 	element1 = (*stack)->n;
-	*stack = (*stack)->next;
+	delete_dnodeint_at_index(stack, 0);
 	element2 = (*stack)->n;
-	*stack = (*stack)->next;
+	delete_dnodeint_at_index(stack, 0);
 	add_dnodeint(stack, element1 * element2);
 }

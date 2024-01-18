@@ -68,20 +68,16 @@ void pint(stack_t **stack, unsigned int ligne)
 */
 void pop(stack_t **stack, unsigned int ligne)
 {
-	stack_t *ptr = *stack;
+	int len;
 
-	if (ptr != NULL)
-	{
-		*stack = ptr->next;
-		ptr->prev = NULL;
-		ptr->next = NULL;
-		free(ptr);
-	}
-	else
+	len = dlistint_len(*stack);
+	if (len == 0)
 	{
 		dprintf(2, "L%d: can't pop an empty stack\n", ligne);
 		exit(EXIT_FAILURE);
 	}
+	else
+		delete_dnodeint_at_index(stack, 0);
 }
 
 /**

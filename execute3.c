@@ -36,7 +36,7 @@ void mod(stack_t **stack, unsigned int ligne)
  */
 void pchar(stack_t **stack, unsigned int ligne)
 {
-	int value = (*stack)->n;
+	int value;
 	int len;
 	char ascii;
 
@@ -46,6 +46,7 @@ void pchar(stack_t **stack, unsigned int ligne)
 		dprintf(2, "L%d: can't pchar, stack empty\n", ligne);
 		exit(EXIT_FAILURE);
 	}
+	value = (*stack)->n;
 	if (value < 32 || value > 126)
 	{
 		dprintf(2, "L%d: can't pchar, value out of range\n", ligne);

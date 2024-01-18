@@ -100,6 +100,8 @@ void rotl(stack_t **stack, unsigned int ligne)
 		delete_dnodeint_at_index(stack, 0);
 		add_dnodeint_end(stack, value);
 	}
+	else
+		return;
 }
 
 /**
@@ -121,4 +123,6 @@ void rotr(stack_t **stack, unsigned int ligne)
 		delete_dnodeint_at_index(stack, len - 1);
 		add_dnodeint(stack, value);
 	}
+	else
+		return;
 }

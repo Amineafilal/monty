@@ -98,17 +98,17 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
 	unsigned int i = 0;
+	dlistint_t *ptr;
 
 	if (head == NULL)
 		return (NULL);
 
-	while (head->prev)
-		head = head->prev;
-	while (head)
+	ptr = head;
+	while (ptr)
 	{
 		if (i == index)
-			return (head);
-		head = head->next;
+			return (ptr);
+		ptr = ptr->next;
 		i++;
 	}
 	return (NULL);

@@ -54,5 +54,8 @@ size_t print_dlistint(const dlistint_t *h);
 void pall(stack_t **stack, unsigned int ligne);
 void free_dlistint(dlistint_t *head);
 void pop(stack_t **stack,unsigned int ligne);
+size_t dlistint_len(const dlistint_t *h);
+void swap(stack_t **stack,unsigned int ligne);
+int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
 
 #endif /*_MONTY_*/

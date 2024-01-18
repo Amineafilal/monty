@@ -50,7 +50,7 @@ size_t print_dlistint(const dlistint_t *h)
 	dlistint_t *head;
 
 	head = (dlistint_t *)h;
-	
+
 	while (head)
 	{
 		printf("%d\n", head->n);
@@ -79,3 +79,26 @@ void free_dlistint(dlistint_t *head)
 		head = next;
 	}
 }
+
+/**
+ *  * dlistint_len -  function that returns the number of elements in a linked
+ *   * @h: pointer to the linked list.
+ *    * Return:lent of the list.
+ *    */
+
+size_t dlistint_len(const dlistint_t *h)
+{
+	int count = 0;
+
+	if (h == NULL)
+		return (count);
+
+	while (h)
+	{
+		count++;
+		h = h->next;
+	}
+	return (count);
+}
+
+

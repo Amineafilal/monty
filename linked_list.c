@@ -14,7 +14,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	newnode = malloc(sizeof(dlistint_t));
 	if (newnode == NULL)
 	{
-		dprintf(2, "Error: malloc failed");
+		dprintf(2, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 

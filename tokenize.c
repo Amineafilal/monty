@@ -9,5 +9,5 @@ void tokenize(char *buf, int ligne, stack_t **stack)
 	token = strtok(buf, " \n\t");
 	if (token == NULL)
 		return;
-	check(token)(stack, ligne);
+	check(token, ligne)(stack, ligne);
 }

@@ -3,7 +3,7 @@
 /***/
 
 
-void (*check(char *comands))(stack_t **stack, unsigned int ligne)
+void (*check(char *comands, unsigned int ligne))(stack_t **stack, unsigned int ligne)
 {
 	int i = 0;
 
@@ -21,6 +21,11 @@ void (*check(char *comands))(stack_t **stack, unsigned int ligne)
 			return(opcodes[i].f);
 		}
 		i++;
+	}
+	if (comands)
+	{
+		dprintf(2, "L%u: unknown instruction %s\n", ligne, comands);
+		exit(EXIT_FAILURE);
 	}
 	return(opcodes[i].f);
 }

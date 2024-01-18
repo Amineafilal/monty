@@ -44,7 +44,7 @@ typedef struct instruction_s
 
 extern char *buf;
 void tokenize(char *buf, int ligne, stack_t **stack);
-void (*check(char *comands))(stack_t **stack, unsigned int ligne);
+void (*check(char *comands, unsigned int ligne))(stack_t **stack, unsigned int ligne);
 void push(stack_t **stack, unsigned int ligne);
 void nop(stack_t **stack,unsigned int ligne);
 void pint(stack_t **stack, unsigned int ligne);

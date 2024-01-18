@@ -27,9 +27,9 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	}
 	else
 	{
-		newnode->prev = *head;
-		newnode->next = NULL;
-		(*head)->next = newnode;
+		newnode->prev = NULL;
+		newnode->next = *head;
+		(*head)->prev = newnode;
 	}
 	*head = newnode;
 	return (newnode);
@@ -41,7 +41,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
  *    *
  *     * @h: a pointer to the list
  *      *
- *       * Return: number of noded in the list
+ *       * Return: number of nodedrin the list
  *       */
 
 size_t print_dlistint(const dlistint_t *h)
@@ -51,10 +51,10 @@ size_t print_dlistint(const dlistint_t *h)
 
 	head = (dlistint_t *)h;
 	
-	while (head != NULL)
+	while (head)
 	{
 		printf("%d\n", head->n);
-		head = head->prev;
+		head = head->next;
 		count++;
 	}
 	return (count);

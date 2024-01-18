@@ -51,7 +51,7 @@ void sub(stack_t **stack,unsigned int ligne)
 
 	if (len < 2)
 	{
-		dprintf(2, "L%d: can't add, stack too short\n", ligne);
+		dprintf(2, "L%d: can't sub, stack too short\n", ligne);
 		free(buf);
 		exit(EXIT_FAILURE);
 	}

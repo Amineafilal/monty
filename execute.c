@@ -66,10 +66,10 @@ void pint(stack_t **stack, unsigned int ligne)
  * @stack: Double pointer to the beginning of the stack
  * @ligne: Line number where the pop operation is executed
 */
-void pop(stack_t **stack,unsigned int ligne)
+void pop(stack_t **stack, unsigned int ligne)
 {
 	stack_t *ptr = *stack;
-	
+
 	if (ptr != NULL)
 	{
 		*stack = ptr->next;
@@ -89,7 +89,7 @@ void pop(stack_t **stack,unsigned int ligne)
  * @stack: Double pointer to the beginning of the stack (unused)
  * @ligne: Line number where the nop operation is executed (unused)
 */
-void nop(stack_t **stack,unsigned int ligne)
+void nop(stack_t **stack, unsigned int ligne)
 {
 	(void) stack;
 	(void) ligne;

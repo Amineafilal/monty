@@ -94,14 +94,13 @@ void rotl(stack_t **stack, unsigned int ligne)
 
 	(void) ligne;
 	len = dlistint_len(*stack);
-	if (len >= 2)
+	if (len < 2)
 	{
-		value = (get_dnodeint_at_index(*stack, 0))->n;
-		delete_dnodeint_at_index(stack, 0);
-		add_dnodeint_end(stack, value);
-	}
-	else
 		return;
+	}
+	value = (get_dnodeint_at_index(*stack, 0))->n;
+	delete_dnodeint_at_index(stack, 0);
+	add_dnodeint_end(stack, value);
 }
 
 /**

@@ -113,12 +113,12 @@ void mul(stack_t **stack, unsigned int ligne)
 
 	if (len < 2)
 	{
-		dprintf(2, "L%d: can't mul, can't mul, stack too short\n", ligne);
+		dprintf(2, "L%d: can't mul, stack too short\n", ligne);
 		exit(EXIT_FAILURE);
 	}
 	element1 = (*stack)->n;
 	delete_dnodeint_at_index(stack, 0);
 	element2 = (*stack)->n;
 	delete_dnodeint_at_index(stack, 0);
-	add_dnodeint(stack, element1 * element2);
+	add_dnodeint(stack, element2 * element1);
 }

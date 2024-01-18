@@ -1,9 +1,13 @@
 #include "monty.h"
 
-/***/
+/**
+ * check - Check the command and return the corresponding function pointer
+ * @com: Command string to check
+ * @ln: Line number where the command is found
+ * Return: Pointer to the corresponding function
+ */
 
-
-void (*check(char *comands, unsigned int ligne))(stack_t **stack, unsigned int ligne)
+void (*check(char *com, unsigned int ln))(stack_t **stack, unsigned int ligne)
 {
 	int i = 0;
 
@@ -21,14 +25,14 @@ void (*check(char *comands, unsigned int ligne))(stack_t **stack, unsigned int l
 
 	while (i < 8)
 	{
-		if (!strcmp(comands, opcodes[i].opcode))
+		if (!strcmp(com, opcodes[i].opcode))
 		{
-			return(opcodes[i].f);
+			return (opcodes[i].f);
 		}
 		i++;
 	}
 
-	dprintf(2, "L%d: unknown instruction %s\n", ligne, comands);
+	dprintf(2, "L%d: unknown instruction %s\n", ln, com);
 	exit(EXIT_FAILURE);
-	return(opcodes[i].f);
+	return (opcodes[i].f);
 }

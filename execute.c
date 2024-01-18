@@ -1,5 +1,10 @@
 #include "monty.h"
 
+/**
+ * push - Pushes an element onto the stack
+ * @stack: Double pointer to the beginning of the stack
+ * @ligne: Line number where the push operation is executed
+ */
 void push(stack_t **stack, unsigned int ligne)
 {
 	char *token2;
@@ -25,7 +30,11 @@ void push(stack_t **stack, unsigned int ligne)
 		exit(EXIT_FAILURE);
 	}
 }
-
+/**
+ * pall - Prints all the elements in the stack
+ * @stack: Double pointer to the beginning of the stack
+ * @ligne: Line number (unused in this function)
+*/
 void pall(stack_t **stack, unsigned int ligne)
 {
 	(void) ligne;
@@ -33,6 +42,11 @@ void pall(stack_t **stack, unsigned int ligne)
 	print_dlistint(*stack);
 }
 
+/**
+ * pint - Prints the value at the top of the stack
+ * @stack: Double pointer to the beginning of the stack
+ * @ligne: Line number where the pint operation is executed
+ */
 void pint(stack_t **stack, unsigned int ligne)
 {
 	int len;
@@ -47,6 +61,11 @@ void pint(stack_t **stack, unsigned int ligne)
 		printf("%d\n", (*stack)->n);
 }
 
+/**
+ * pop - Removes the top element of the stack
+ * @stack: Double pointer to the beginning of the stack
+ * @ligne: Line number where the pop operation is executed
+*/
 void pop(stack_t **stack,unsigned int ligne)
 {
 	stack_t *ptr = *stack;
@@ -65,6 +84,11 @@ void pop(stack_t **stack,unsigned int ligne)
 	}
 }
 
+/**
+ * nop - Does nothing
+ * @stack: Double pointer to the beginning of the stack (unused)
+ * @ligne: Line number where the nop operation is executed (unused)
+*/
 void nop(stack_t **stack,unsigned int ligne)
 {
 	(void) stack;

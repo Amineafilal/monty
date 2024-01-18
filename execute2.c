@@ -1,8 +1,12 @@
 #include "monty.h"
 
-/***/
 
-void swap(stack_t **stack,unsigned int ligne)
+/**
+ * swap - Swaps the top two elements of the stack
+ * @stack: Double pointer to the beginning of the stack
+ * @ligne: Line number where the swap operation is executed
+ */
+void swap(stack_t **stack, unsigned int ligne)
 {
 	int len, element1, element2;
 
@@ -21,8 +25,12 @@ void swap(stack_t **stack,unsigned int ligne)
 	add_dnodeint(stack, element2);
 }
 
-
-void add(stack_t **stack,unsigned int ligne)
+/**
+ * add - Adds the top two elements of the stack
+ * @stack: Double pointer to the beginning of the stack
+ * @ligne: Line number where the add operation is executed
+ */
+void add(stack_t **stack, unsigned int ligne)
 {
 	int len, element1, element2;
 
@@ -41,9 +49,12 @@ void add(stack_t **stack,unsigned int ligne)
 	add_dnodeint(stack, element1 + element2);
 }
 
-/***/
-
-void sub(stack_t **stack,unsigned int ligne)
+/**
+ * sub - Subtracts the top element from the second top element in the stack
+ * @stack: Double pointer to the beginning of the stack
+ * @ligne: Line number where the subtraction operation is executed
+ */
+void sub(stack_t **stack, unsigned int ligne)
 {
 	int len, element1, element2;
 

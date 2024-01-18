@@ -2,7 +2,12 @@
 
 char *buf;
 
-/***/
+/**
+ * main - Entry point of the program
+ * @argc: Number of command-line arguments
+ * @argv: Array of command-line argument strings
+ * Return: Always EXIT_SUCCESS
+ */
 int main(int argc, char *argv[])
 {
 	FILE *fd;

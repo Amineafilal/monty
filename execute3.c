@@ -64,18 +64,18 @@ void pchar(stack_t **stack, unsigned int ligne)
 
 void pstr(stack_t **stack, unsigned int ligne)
 {
-	int ch;
-	char character;
-	stack_t *head;
+	int value;
+	char ascii;
+	stack_t *ptr;
 
 	(void) ligne;
-	head = *stack;
+	ptr = *stack;
 	while (head != NULL && head->n != 0 && head->n >= 32 && head->n <= 126)
 	{
-		ch = (head)->n;
-		character = ch;
-		printf("%c", character);
-		head = head->next;
+		value = ptr->n;
+		ascii = value;
+		printf("%c", ascii);
+		ptr = ptr->next;
 	}
-	printf("\n");
+	putchar('\n');
 }

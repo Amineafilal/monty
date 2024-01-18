@@ -43,8 +43,6 @@ void pint(stack_t **stack, unsigned int ligne)
 void pop(stack_t **stack,unsigned int ligne)
 {
 	stack_t *ptr = *stack;
-
-	(void) ligne;
 	
 	if (ptr != NULL)
 	{
@@ -52,6 +50,11 @@ void pop(stack_t **stack,unsigned int ligne)
 		ptr->prev = NULL;
 		ptr->next = NULL;
 		free(ptr);
+	}
+	else
+	{
+		dprintf(2, "L%d: can't pop an empty stack\n", ligne);
+		exit(EXIT_FAILURE);
 	}
 }
 

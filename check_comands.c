@@ -15,6 +15,7 @@ void (*check(char *comands, unsigned int ligne))(stack_t **stack, unsigned int l
 		{"swap", swap},
 		{"add", add},
 		{"nop", nop},
+		{"nop", nop},
 	};
 
 	while (i < 7)

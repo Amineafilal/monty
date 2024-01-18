@@ -70,7 +70,7 @@ void pstr(stack_t **stack, unsigned int ligne)
 
 	(void) ligne;
 	ptr = *stack;
-	while (head != NULL && head->n != 0 && head->n >= 32 && head->n <= 126)
+	while (ptr != NULL && ptr->n != 0 && ptr->n >= 32 && ptr->n <= 126)
 	{
 		value = ptr->n;
 		ascii = value;

@@ -74,7 +74,7 @@ void sub(stack_t **stack, unsigned int ligne)
 }
 
 /**
- * div - Divides the second top element by the top element in the stack
+ * _div - Divides the second top element by the top element in the stack
  * @stack: Double pointer to the beginning of the stack
  * @ligne: Line number where the division operation is executed
  */
@@ -98,5 +98,5 @@ void _div(stack_t **stack, unsigned int ligne)
 	delete_dnodeint_at_index(stack, 0);
 	element2 = (*stack)->n;
 	delete_dnodeint_at_index(stack, 0);
-	add_dnodeint(stack, element2 / element1);
+	add_dnodeint(stack, element1 / element2);
 }

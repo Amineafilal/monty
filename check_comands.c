@@ -19,7 +19,7 @@ void (*check(char *com, unsigned int ln))(stack_t **stack, unsigned int ligne)
 		{"swap", swap},
 		{"sub", sub},
 		{"add", add},
-		{"_div", _div},
+		{"div", _div},
 		{"nop", nop},
 		{"nop", nop},
 	};

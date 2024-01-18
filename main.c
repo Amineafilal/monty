@@ -1,7 +1,6 @@
 #include "monty.h"
 
 /***/
-char *buf;
 int main(int argc, char *argv[])
 {
 	FILE *fd;

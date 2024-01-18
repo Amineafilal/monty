@@ -1,5 +1,5 @@
-#ifndef _MONTY_
-#define _MONTY_
+#ifndef MONTY_H
+#define MONTY_H
 
 #define _GNU_SOURCE
 
@@ -8,7 +8,9 @@
 #include <string.h>
 #include <fcntl.h>
 #include <unistd.h>
+#define _GNU_SOURCE
 
+char *buf;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -42,7 +44,6 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-extern char *buf;
 void tokenize(char *buf, int ligne, stack_t **stack);
 void (*check(char *comands, unsigned int ligne))(stack_t **stack, unsigned int ligne);
 void push(stack_t **stack, unsigned int ligne);
@@ -60,4 +61,4 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
 void add(stack_t **stack,unsigned int ligne);
 void sub(stack_t **stack,unsigned int ligne);
 
-#endif /*_MONTY_*/
+#endif

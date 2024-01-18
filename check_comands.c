@@ -19,7 +19,7 @@ void (*check(char *comands, unsigned int ligne))(stack_t **stack, unsigned int l
 		{"nop", nop},
 	};
 
-	while (i < 7)
+8while (i < 8)
 	{
 		if (!strcmp(comands, opcodes[i].opcode))
 		{

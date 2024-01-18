@@ -26,10 +26,8 @@ void (*check(char *comands, unsigned int ligne))(stack_t **stack, unsigned int l
 		}
 		i++;
 	}
-	if (comands)
-	{
-		dprintf(2, "L%d: unknown instruction %s\n", ligne, comands);
-		exit(EXIT_FAILURE);
-	}
+
+	dprintf(2, "L%d: unknown instruction %s\n", ligne, comands);
+	exit(EXIT_FAILURE);
 	return(opcodes[i].f);
 }

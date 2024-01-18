@@ -1,11 +1,14 @@
-#ifndef MONTY_H
-#define MONTY_H
+#ifndef _MONTY_
+#define _MONTY_
+
+#define _GNU_SOURCE
+
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
-#include <unistd.h>
-#include <stdarg.h>
 #include <string.h>
+#include <fcntl.h>
+#include <unistd.h>
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -21,6 +24,10 @@ typedef struct stack_s
 	struct stack_s *prev;
 	struct stack_s *next;
 } stack_t;
+
+typedef struct stack_s dlistint_t;
+
+
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -34,7 +41,17 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-void _push(stack_t **stack, unsigned int line_number);
-void _pall(stack_t **stack, unsigned int line_number);
-int main(int argc, char *argv[]);
-#endif
+
+extern char *buf;
+void tokenize(char *buf, int ligne, stack_t **stack);
+void (*check(char *comands))(stack_t **stack, unsigned int ligne);
+void push(stack_t **stack, unsigned int ligne);
+void nop(stack_t **stack,unsigned int ligne);
+void pint(stack_t **stack, unsigned int ligne);
+int not_int(char *s);
+dlistint_t *add_dnodeint(dlistint_t **head, const int n);
+size_t print_dlistint(const dlistint_t *h);
+void pall(stack_t **stack, unsigned int ligne);
+void free_dlistint(dlistint_t *head);
+
+#endif /*_MONTY_*/

@@ -61,29 +61,31 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-	dlistint_t *lastnode = NULL;
+	dlistint_t *node;
+	dlistint_t *tail;
 
-	lastnode = malloc(sizeof(dlistint_t));
-	if (lastnode == NULL)
+	node = malloc(sizeof(dlistint_t));
+	if (node == NULL)
 		return (NULL);
 
-	lastnode->n = n;
-	lastnode->next = NULL;
+	node->n = n;
 
 	if (*head == NULL)
 	{
-		*head = lastnode;
-		lastnode->prev = NULL;
-		return (lastnode);
+		node->prev = NULL;
+		node->next = NULL;
+		*head = node;
 	}
-	while ((*head)->next)
+	else
 	{
-		*head = (*head)->next;
+		tail = *head;
+		while (tail->next != NULL)
+				tail = tail->next;
+		tail->next = node;
+		node->prev = tail;
+		node->next = NULL;
 	}
-
-	lastnode->prev = *head;
-	(*head)->next = lastnode;
-	return (lastnode);
+	return (node);
 }
 
 /**

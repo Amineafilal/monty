@@ -79,3 +79,46 @@ void pstr(stack_t **stack, unsigned int ligne)
 	}
 	putchar('\n');
 }
+
+/**
+ * rotl - The opcode rotr rotates
+ *			the stack to the bottom.
+ * @stack : Double pointer to the beginning of the stack
+ * @ligne : variable
+ * Return: if code fails.
+ */
+
+void rotl(stack_t **stack, unsigned int ligne)
+{
+	int len, value;
+
+	(void) ligne;
+	len = dlistint_len(*stack);
+	if (len >= 2)
+	{
+		value = (get_dnodeint_at_index(*stack, 0))->n;
+		delete_dnodeint_at_index(stack, 0);
+		add_dnodeint_end(stack, value);
+	}
+}
+
+/**
+ * rotr - check code.
+ * @stack : Double pointer to the beginning of the stack
+ * @ligne : Line number where the modulo operation is executed
+ * Return: if code fails.
+ */
+
+void rotr(stack_t **stack, unsigned int ligne)
+{
+	int len, value;
+
+	(void) ligne;
+	len = dlistint_len(*stack);
+	if (len >= 2)
+	{
+		value = (get_dnodeint_at_index(*stack, len - 1))->n;
+		delete_dnodeint_at_index(stack, len - 1);
+		add_dnodeint(stack, value);
+	}
+}

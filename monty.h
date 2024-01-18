@@ -63,6 +63,10 @@ void _div(stack_t **stack, unsigned int ligne);
 void mul(stack_t **stack, unsigned int ligne);
 void mod(stack_t **stack, unsigned int ligne);
 void pchar(stack_t **stack, unsigned int ligne);
-void pstr(stack_t **stack, unsigned int line_number);
+void pstr(stack_t **stack, unsigned int ligne);
+void rotl(stack_t **stack, unsigned int ligne);
+void rotr(stack_t **stack, unsigned int ligne);
+dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index);
+dlistint_t *add_dnodeint_end(dlistint_t **head, const int n);
 
 #endif

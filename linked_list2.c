@@ -50,3 +50,66 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 
 	return (-1);
 }
+
+/**
+ * add_dnodeint_end - a function that adds a new node at the end
+ *						of a dlistint_t list.
+ * @head: pointer to the list
+ * @n: data of the new node
+ * Return: the address of the new element, or NULL if it failed
+ */
+
+dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
+{
+	dlistint_t *lastnode = NULL;
+
+	lastnode = malloc(sizeof(dlistint_t));
+	if (lastnode == NULL)
+		return (NULL);
+
+	lastnode->n = n;
+	lastnode->next = NULL;
+
+	if (*head == NULL)
+	{
+		*head = lastnode;
+		lastnode->prev = NULL;
+		return (lastnode);
+	}
+	while ((*head)->next)
+	{
+		*head = (*head)->next;
+	}
+
+	lastnode->prev = *head;
+	(*head)->next = lastnode;
+	return (lastnode);
+
+}
+
+/**
+ * get_dnodeint_at_index - a function that returns the nth node
+ *					of a dlistint_t linked list.
+ * @head: pointer to the list
+ * @index: position of the node to return
+ * Return: pointer to the node to find
+ */
+
+dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
+{
+	unsigned int i = 0;
+
+	if (head == NULL)
+		return (NULL);
+
+	while (head->prev)
+		head = head->prev;
+	while (head)
+	{
+		if (i == index)
+			return (head);
+		head = head->next;
+		i++;
+	}
+	return (NULL);
+}

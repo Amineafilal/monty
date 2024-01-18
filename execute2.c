@@ -100,3 +100,25 @@ void _div(stack_t **stack, unsigned int ligne)
 	delete_dnodeint_at_index(stack, 0);
 	add_dnodeint(stack, element1 / element2);
 }
+/**
+ * mul  - multiply the second top element by the top element in the stack
+ * @stack: Double pointer to the beginning of the stack
+ * @ligne: Line number where the division operation is executed
+ */
+void mul(stack_t **stack, unsigned int ligne)
+{
+	int len, element1, element2;
+
+	len = dlistint_len(*stack);
+
+	if (len < 2)
+	{
+		dprintf(2, "L%d: can't mul, can't mul, stack too short\n", ligne);
+		exit(EXIT_FAILURE);
+	}
+	element1 = (*stack)->n;
+	delete_dnodeint_at_index(stack, 0);
+	element2 = (*stack)->n;
+	delete_dnodeint_at_index(stack, 0);
+	add_dnodeint(stack, element1 * element2);
+}

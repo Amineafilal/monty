@@ -20,11 +20,12 @@ void (*check(char *com, unsigned int ln))(stack_t **stack, unsigned int ligne)
 		{"sub", sub},
 		{"add", add},
 		{"div", _div},
+		{"mul", mul},
 		{"nop", nop},
 		{"nop", nop},
 	};
 
-	while (i < 10)
+	while (i < 11)
 	{
 		if (!strcmp(com, opcodes[i].opcode))
 		{

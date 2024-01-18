@@ -60,4 +60,5 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
 void add(stack_t **stack, unsigned int ligne);
 void sub(stack_t **stack, unsigned int ligne);
 void _div(stack_t **stack, unsigned int ligne);
+void mul(stack_t **stack, unsigned int ligne);
 #endif

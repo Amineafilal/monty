@@ -30,7 +30,7 @@ void (*check(char *com, unsigned int ln))(stack_t **stack, unsigned int ligne)
 		{"nop", nop},
 	};
 
-	while (i < 13)
+	while (i < 15)
 	{
 		if (!strcmp(com, opcodes[i].opcode))
 		{

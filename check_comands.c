@@ -22,11 +22,15 @@ void (*check(char *com, unsigned int ln))(stack_t **stack, unsigned int ligne)
 		{"div", _div},
 		{"mul", mul},
 		{"mod", mod},
+		{"pchar", pchar},
+		{"pstr", pstr},
+		{"rotr", rotr},
+		{"rotl", rotl},
 		{"nop", nop},
 		{"nop", nop},
 	};
 
-	while (i < 11)
+	while (i < 15)
 	{
 		if (!strcmp(com, opcodes[i].opcode))
 		{

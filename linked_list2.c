@@ -80,7 +80,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	{
 		tail = *head;
 		while (tail->next != NULL)
-				tail = tail->next;
+			tail = tail->next;
 		tail->next = node;
 		node->prev = tail;
 		node->next = NULL;
